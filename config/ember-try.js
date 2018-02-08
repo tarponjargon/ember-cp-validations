@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * Copyright 2016, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -27,6 +28,24 @@ module.exports = {
         'ember-cli-shims': null,
         'ember-data': '~1.13.0',
         'ember-source': null
+=======
+module.exports = {
+  scenarios: [
+    {
+      name: 'ember-lts-2.12',
+      npm: {
+        devDependencies: {
+          'ember-source': '~2.12.0'
+        }
+      }
+    },
+    {
+      name: 'ember-lts-2.16',
+      npm: {
+        devDependencies: {
+          'ember-source': '~2.16.0'
+        }
+>>>>>>> 4467d95... message
       }
     }
   }, {

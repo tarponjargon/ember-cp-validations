@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 /* eslint-env node */
 /* global require, module */
+=======
+>>>>>>> 4467d95... message
 'use strict';
 
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');

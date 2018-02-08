@@ -1,9 +1,12 @@
+<<<<<<< HEAD
 /**
  * Copyright 2016, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
  */
 
 /* eslint-env node */
+=======
+>>>>>>> 4467d95... message
 'use strict';
 
 module.exports = {

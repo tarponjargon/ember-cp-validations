@@ -5,6 +5,12 @@ node_js:
 
 sudo: false
 dist: trusty
+<<<<<<< HEAD
+=======
+
+addons:
+  chrome: stable
+>>>>>>> 4467d95... message
 
 cache:
   yarn: true
@@ -14,6 +20,7 @@ addons:
     repo_token: 32e4df25574ba02aacb75e6d34b9c667044984df279e20a208884d7e9e9d4a8d
 
 env:
+<<<<<<< HEAD
   - EMBER_TRY_SCENARIO=default
   - EMBER_TRY_SCENARIO=ember-1.13
   - EMBER_TRY_SCENARIO=ember-lts-2.4
@@ -22,6 +29,20 @@ env:
   - EMBER_TRY_SCENARIO=ember-release
   - EMBER_TRY_SCENARIO=ember-beta
   - EMBER_TRY_SCENARIO=ember-canary
+=======
+  global:
+    # See https://git.io/vdao3 for details.
+    - JOBS=1
+  matrix:
+    # we recommend new addons test the current and previous LTS
+    # as well as latest stable release (bonus points to beta/canary)
+    - EMBER_TRY_SCENARIO=ember-lts-2.12
+    - EMBER_TRY_SCENARIO=ember-lts-2.16
+    - EMBER_TRY_SCENARIO=ember-release
+    - EMBER_TRY_SCENARIO=ember-beta
+    - EMBER_TRY_SCENARIO=ember-canary
+    - EMBER_TRY_SCENARIO=ember-default
+>>>>>>> 4467d95... message
 
 matrix:
   fast_finish: true
@@ -30,6 +51,7 @@ matrix:
     - env: EMBER_TRY_SCENARIO=ember-canary
 
 before_install:
+<<<<<<< HEAD
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH=$HOME/.yarn/bin:$PATH
   - yarn global add codeclimate-test-reporter
@@ -42,3 +64,14 @@ script:
 
 after_script:
   - codeclimate-test-reporter < coverage/lcov.info
+=======
+  - npm config set spin false
+  - npm install -g npm@4
+  - npm --version
+
+script:
+  - npm run lint:js
+  # Usually, it's ok to finish the test scenario without reverting
+  #  to the addon's original dependency state, skipping "cleanup".
+  - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO --skip-cleanup
+>>>>>>> 4467d95... message

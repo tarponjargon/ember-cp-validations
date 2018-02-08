@@ -1,9 +1,12 @@
+<<<<<<< HEAD
 /**
  * Copyright 2016, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
  */
 
 /* eslint-env node */
+=======
+>>>>>>> 4467d95... message
 'use strict';
 
 module.exports = function(environment) {
@@ -46,10 +49,15 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.autoboot = false;
   }
 
   if (environment === 'production') {
+<<<<<<< HEAD
     ENV.rootURL = '/ember-cp-validations/';
+=======
+    // here you can enable a production-specific feature
+>>>>>>> 4467d95... message
   }
 
   return ENV;
